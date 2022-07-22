@@ -10,6 +10,9 @@ SCRIPT_DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 
 # TODO: Handle package installation more gracefully.
 # TODO: https://ilhicas.com/2018/08/08/bash-script-to-install-packages-multiple-os.html (maybe)
+# TODO: Switch to https://github.com/zplug/zplug
+# TODO: Base on https://github.com/nickjj/dotfiles
+# TODO : https://github.com/tonsky/FiraCode
 
 if command -v apt-get &> /dev/null; then
     sudo apt-get -qq update
