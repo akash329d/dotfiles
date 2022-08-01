@@ -16,7 +16,7 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 # Alias
-alias ll='ls -aF'
+alias la='ls -aF'
 
 if command -v batcat &> /dev/null; then
     alias cat='batcat'
