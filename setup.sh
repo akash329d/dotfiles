@@ -24,22 +24,12 @@ zplug "sharkdp/bat", as:command, from:gh-r, use:"*x86_64*musl*", rename-to:bat
 zplug "junegunn/fzf", as:command, from:gh-r
 
 # Dotfiles
-zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
+zplug "akash329d/dotfiles", at:dotfiles, use:"{zshrc,p10k}"
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
+if ! zplug check; then
   zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# Source p10k profile
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Bind ctrl/arrow keys
-bindkey "\e[1;5C" forward-word
-bindkey "\e[1;5D" backward-word
-
-# Alias
-alias la='ls -aF'
