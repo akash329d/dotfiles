@@ -18,7 +18,9 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Dotfiles
-zinit ice from"gh-r" multisrc'{zshrc,vimrc}'
+zinit ice pick"zshrc" src"p10k"
+zinit light akash329d/dotfiles
+
 
 autoload -Uz compinit
 compinit
