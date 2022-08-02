@@ -22,8 +22,9 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 # Alias
-alias la='ls -aF'
+alias la='ls -aF' # List All
 alias dfu='zinit update akash329d/dotfiles; source ~/.zshrc' # Dotfile Update
+alis cat='bat'
 
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
