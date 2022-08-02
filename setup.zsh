@@ -20,12 +20,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Dotfiles
 zinit ice pick"zshrc" src"p10k"
 zinit light akash329d/dotfiles
-
-
-autoload -Uz compinit
-compinit
-
-zinit cdreplay -q
+zicompinit; zicdreplay
 
 ###### DOTFILES END ######
 EOM
