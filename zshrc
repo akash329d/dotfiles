@@ -24,7 +24,7 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='ls -aF'
-alias df_update='zinit update akash329d/dotfiles'
+alias dfu='zinit update akash329d/dotfiles; source ~/.zshrc' # Dotfile Update
 
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
