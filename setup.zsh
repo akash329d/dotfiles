@@ -37,4 +37,4 @@ zplug_install
 ###### DOTFILES END ######
 EOM
 
-echo "Dotfiles installation complete!"
+echo "Dotfiles installation complete! Restart zsh to see changes!"

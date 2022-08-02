@@ -7,6 +7,7 @@ source ~/.zplug/init.zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "zsh-users/zsh-autosuggestions"
 zplug "agkozak/zsh-z"
+zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
 zplug "Aloxaf/fzf-tab"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
