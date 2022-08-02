@@ -23,7 +23,7 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='ls -aF'
-alais test='ls'
+alias df_update='zinit update akash329d/dotfiles'
 
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
