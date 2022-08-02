@@ -2,7 +2,7 @@
 
 Terminal Config/Setup Scripts.
 
-Depends on [zplug](https://github.com/zplug/zplug) for plugin/dotfiles management. Run `zplug update` to update dotfiles/plugins.
+Depends on [zinit](https://github.com/zdharma-continuum/zinit) for plugin/dotfiles management. Run `dfu` to update dotfiles/plugins once installed.
 
 ### Installation
 
