@@ -1,12 +1,12 @@
 #!/bin/zsh
 
-if [[ -z $ZPLUG_HOME ]]; then
-   export ZPLUG_HOME=~/.zplug
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+
+if [ ! -d $ZINIT_HOME ]; then
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-if [ ! -d $ZPLUG_HOME ]; then
-  git clone --quiet https://github.com/zplug/zplug.git $ZPLUG_HOME
-fi
 
 cat > ~/.zshrc <<- EOM
 ###### SECTION FOR DOTFILES ######
@@ -16,23 +16,17 @@ if [[ -r "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
   source "\${XDG_CACHE_HOME:-\$HOME/.cache}/p10k-instant-prompt-\${(%):-%n}.zsh"
 fi
 
-# Add zplug (https://github.com/zplug/zplug.git)
-source ~/.zplug/init.zsh
-
-zplug_install () {
-  if ! zplug check --verbose; then
-    zplug install
-  fi
-  zplug load
-}
+# Add zinit (https://github.com/zdharma-continuum/zinit)
+source "${ZINIT_HOME}/zinit.zsh"
 
 # Dotfiles
-zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
+zinit snippet 'https://github.com/akash329d/dotfiles/raw/main/zshrc'
+zinit snippet 'https://github.com/akash329d/dotfiles/raw/main/p10k'
 
-# Need to zplug install and load twice to first load my zshrc.
-# Then install all packages added by zshrc.
-zplug_install
-zplug_install
+autoload -Uz compinit
+compinit
+
+zinit cdreplay -q
 
 ###### DOTFILES END ######
 EOM

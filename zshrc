@@ -4,16 +4,19 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 source ~/.zplug/init.zsh
 
 # Zsh Plugins
-zplug "romkatv/powerlevel10k", as:theme, depth:1
-zplug "zsh-users/zsh-autosuggestions"
-zplug "agkozak/zsh-z"
-zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
-zplug "Aloxaf/fzf-tab"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zi ice depth"1" # git clone depth
+zi light romkatv/powerlevel10k
+zi light zsh-users/zsh-autosuggestions
+zi light agkozak/zsh-z
+zi light Aloxaf/fzf-tab
+zi light zsh-users/zsh-syntax-highlighting
 
 # Binaries
-zplug "sharkdp/bat", as:command, from:gh-r, use:"*x86_64*musl*", rename-to:bat
-zplug "junegunn/fzf", as:command, from:gh-r
+zi ice from"gh-r" as"program"
+zi light sharkdp/bat
+
+zi ice from"gh-r" as"program"
+zi light junegunn/fzf
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
