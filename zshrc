@@ -1,8 +1,6 @@
 # Script directory
 SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 
-source ~/.zplug/init.zsh
-
 # Zsh Plugins
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
