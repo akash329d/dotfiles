@@ -8,7 +8,7 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Dotfiles
-zplug "akash329d/dotfiles", at:dotfiles, use:"{zshrc,p10k}"
+zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then

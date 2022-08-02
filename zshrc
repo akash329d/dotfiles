@@ -14,11 +14,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "sharkdp/bat", as:command, from:gh-r, use:"*x86_64*musl*", rename-to:bat
 zplug "junegunn/fzf", as:command, from:gh-r
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-  zplug install
-fi
-
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
