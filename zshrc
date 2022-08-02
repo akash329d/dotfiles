@@ -23,6 +23,7 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='ls -aF'
+alais test='ls'
 
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
