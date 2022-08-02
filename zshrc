@@ -4,9 +4,10 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 # Zsh Plugins
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-zinit light zsh-users/zsh-autosuggestions
 zinit light agkozak/zsh-z
 zinit light Aloxaf/fzf-tab
+zinit light djui/alias-tips
+zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Binaries
