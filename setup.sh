@@ -1,19 +1,17 @@
- #!/bin/sh
+#!/bin/zsh
 
-
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 source ~/.zplug/init.zsh
 
-# Let zplug manage itself
-# zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
 # Dotfiles
-zplug "akash329d/dotfiles", use:"{zshrc,p10k}", hook-load:'zplug install && zplug load'
+zplug "akash329d/dotfiles", use:"{zshrc,p10k}"
+
+# Install my dotfiles
+zplug load --verbose
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-  zplug install
-fi
+zplug install
 
 # Then, source plugins and add commands to $PATH
 zplug load
