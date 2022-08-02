@@ -10,7 +10,8 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Binaries
-zinit ice from"gh-r" as"program"
+
+zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
 zinit ice from"gh-r" as"program"

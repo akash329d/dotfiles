@@ -2,10 +2,8 @@
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-
-if [ ! -d $ZINIT_HOME ]; then
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
+mkdir -p "$(dirname $ZINIT_HOME)"
+git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
 
 cat > ~/.zshrc <<- EOM
@@ -20,8 +18,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Dotfiles
-zinit snippet 'https://github.com/akash329d/dotfiles/raw/main/zshrc'
-zinit snippet 'https://github.com/akash329d/dotfiles/raw/main/p10k'
+zinit ice from"gh-r" multisrc'{zshrc,vimrc}'
 
 autoload -Uz compinit
 compinit
