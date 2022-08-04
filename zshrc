@@ -4,7 +4,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 # Zsh Plugins
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-zinit light agkozak/zsh-z
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -15,6 +14,11 @@ zinit light akash329d/zsh-alias-finder
 zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
+zinit ice as"command" from"gh-r" mv"zoxide*/zoxide -> zoxide" \
+atclone"./zoxide init zsh > init.zsh" \
+atpull"%atclone" src"init.zsh" nocompile'!'
+zinit light ajeetdsouza/zoxide
+
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
@@ -24,7 +28,7 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='ls -aF' # List All
-alias dfu='zinit update --parallel; source ~/.zshrc' # Dotfile Update
+alias dfu='zinit delete --all; source ~/.zshrc' # Dotfile Update
 alias cat='bat'
 
 # vimrc
