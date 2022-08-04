@@ -14,7 +14,7 @@ zinit light akash329d/zsh-alias-finder
 zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
-zinit ice as"command" from"gh-r" mv"zoxide*/zoxide -> zoxide" \
+zinit ice as"command" from"gh-r" \
 atclone"./zoxide init zsh > init.zsh" \
 atpull"%atclone" src"init.zsh" nocompile'!'
 zinit light ajeetdsouza/zoxide
