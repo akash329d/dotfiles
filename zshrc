@@ -29,7 +29,7 @@ bindkey "\e[1;5D" backward-word
 # Alias
 alias la='ls -aF' # List All
 alias dfu='zinit update --parallel; source ~/.zshrc' # Dotfile Update
-alias dfr='zinit delete --all; source ~/.zshrc' # Dotfile Replace (Delete old plugins)
+alias dfr='zinit delete --all --yes; source ~/.zshrc' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
 
 # vimrc
