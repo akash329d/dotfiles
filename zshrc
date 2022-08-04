@@ -8,6 +8,7 @@ zinit light agkozak/zsh-z
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light akash329d/zsh-alias-finder
 
 # Binaries
 
