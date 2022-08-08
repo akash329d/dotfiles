@@ -23,10 +23,10 @@ zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
 zinit ice from"gh-r" as"program"
-https://github.com/extrawurst/gitui
+zinit light extrawurst/gitui
 
 zinit ice from"gh-r" as"program"
-https://github.com/ogham/exa
+zinit light ogham/exa
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
