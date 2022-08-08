@@ -11,16 +11,22 @@ zinit light akash329d/zsh-alias-finder
 
 # Binaries
 
-zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
-zinit ice as"command" from"gh-r" \
+zinit ice as"program" from"gh-r" \
 atclone"./zoxide init zsh > init.zsh" \
 atpull"%atclone" src"init.zsh" nocompile'!'
 zinit light ajeetdsouza/zoxide
 
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
+
+zinit ice from"gh-r" as"program"
+https://github.com/extrawurst/gitui
+
+zinit ice from"gh-r" as"program"
+https://github.com/ogham/exa
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
