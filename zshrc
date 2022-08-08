@@ -26,7 +26,7 @@ zinit ice from"gh-r" as"program"
 zinit light extrawurst/gitui
 
 zinit ice from"gh-r" as"program" pick"bin/exa" \
-atclone"completions/exa.zsh > _exa" atpull"%atclone"
+atclone"cp completions/exa.zsh _exa" atpull"%atclone"
 zinit light ogham/exa
 
 # Bind ctrl/arrow keys
