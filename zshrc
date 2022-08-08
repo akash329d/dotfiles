@@ -45,7 +45,7 @@ VIMRC_LOC=${SCRIPT_DIR}/vimrc
 export VIMINIT="source ${VIMRC_LOC}"
 
 # zuser
-if [ -d "$HOME/.zuser" ] ; then
+if [ -f "$HOME/.zuser" ] ; then
     source $HOME/.zuser
 fi
 
