@@ -34,7 +34,7 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 # Alias
-alias la='exa --icons --git -a' # List All
+alias la='exa --icons -a' # List All
 alias dfu='zinit self-update; zinit update --parallel; source ~/.zshrc' # Dotfile Update
 alias dfr='zinit cclear; zinit delete --all --yes; source ~/.zshrc' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
