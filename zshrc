@@ -25,7 +25,8 @@ zinit light junegunn/fzf
 zinit ice from"gh-r" as"program"
 zinit light extrawurst/gitui
 
-zinit ice from"gh-r" as"program"
+zinit ice from"gh-r" as"program" pick"bin/exa" \
+atpull"zinit creinstall completions/zsh/exa"
 zinit light ogham/exa
 
 # Bind ctrl/arrow keys
