@@ -25,4 +25,4 @@ zicompinit; zicdreplay
 ###### DOTFILES END ######
 EOM
 
-echo "Dotfiles installation complete! Restart zsh to see changes!"
+echo "Dotfiles installation complete! Restart zsh to see changes. Run dfu to get updates, dfr for reinstall."
