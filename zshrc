@@ -1,6 +1,9 @@
 # Script directory
 SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 
+# Zinit annex
+zinit light zdharma-continuum/zinit-annex-rust
+
 # Zsh Plugins
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
@@ -25,9 +28,11 @@ zinit light junegunn/fzf
 zinit ice from"gh-r" as"program"
 zinit light extrawurst/gitui
 
-zinit ice from"gh-r" as"program" pick"bin/exa" \
-atclone"cp completions/exa.zsh _exa" atpull"%atclone"
-zinit light ogham/exa
+# zinit ice from"gh-r" as"program" pick"bin/exa" \
+# atclone"cp completions/exa.zsh _exa" atpull"%atclone"
+# zinit light ogham/exa
+zinit ice rustup cargo'exa' as"command" pick"bin/exa"
+zinit load zdharma-continuum/null
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
