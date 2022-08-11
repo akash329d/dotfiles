@@ -1,9 +1,6 @@
 # Script directory
 SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 
-# Zinit annexes
-zinit light zdharma-continuum/zinit-annex-rust
-
 # Zsh Plugins
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
@@ -14,27 +11,23 @@ zinit light akash329d/zsh-alias-finder
 
 # Binaries
 
-# zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-# zinit light sharkdp/bat
+zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
 
-# zinit ice as"program" from"gh-r" \
-# atclone"./zoxide init zsh > init.zsh" \
-# atpull"%atclone" src"init.zsh" nocompile'!'
-# zinit light ajeetdsouza/zoxide
+zinit ice as"program" from"gh-r" \
+atclone"./zoxide init zsh > init.zsh" \
+atpull"%atclone" src"init.zsh" nocompile'!'
+zinit light ajeetdsouza/zoxide
 
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-# zinit ice from"gh-r" as"program"
-# zinit light extrawurst/gitui
+zinit ice from"gh-r" as"program"
+zinit light extrawurst/gitui
 
-# zinit ice from"gh-r" as"program" pick"bin/exa" \
-# atclone"cp completions/exa.zsh _exa" atpull"%atclone"
-# zinit light ogham/exa
-zinit ice rustup cargo'exa;bat;zoxide;gitui' as"command" atload='export CARGO_HOME=$PWD RUSTUP_HOME=$PWD/rustup'
-zinit load zdharma-continuum/null
-
-eval "$(zoxide init zsh)"
+zinit ice from"gh-r" as"program" pick"bin/exa" \
+atclone"cp completions/exa.zsh _exa" atpull"%atclone"
+zinit light ogham/exa
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
@@ -52,7 +45,7 @@ VIMRC_LOC=${SCRIPT_DIR}/vimrc
 export VIMINIT="source ${VIMRC_LOC}"
 
 # zuser
-if [ -f "$HOME/.zuser" ] ; then
+if [ -d "$HOME/.zuser" ] ; then
     source $HOME/.zuser
 fi
 
