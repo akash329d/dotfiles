@@ -1,7 +1,7 @@
 # Script directory
 SCRIPT_DIR=$( cd -- "$( dirname -- "${0}" )" &> /dev/null && pwd )
 
-# Zinit annex
+# Zinit annexes
 zinit light zdharma-continuum/zinit-annex-rust
 
 # Zsh Plugins
@@ -31,7 +31,7 @@ zinit light extrawurst/gitui
 # zinit ice from"gh-r" as"program" pick"bin/exa" \
 # atclone"cp completions/exa.zsh _exa" atpull"%atclone"
 # zinit light ogham/exa
-zinit ice rustup cargo'exa' as"command" pick"bin/exa"
+zinit ice rustup cargo'exa' as"command" atload='export CARGO_HOME=$PWD RUSTUP_HOME=$PWD/rustup'
 zinit load zdharma-continuum/null
 
 # Bind ctrl/arrow keys
