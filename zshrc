@@ -17,7 +17,8 @@ zinit light junegunn/fzf
 # Rust Annex 
 zinit light zdharma-continuum/zinit-annex-rust
 
-zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)"
+zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)" \
+atload"zoxide init zsh --cmd cd > init.zsh" src"init.zsh"
 zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
@@ -39,10 +40,3 @@ export VIMINIT="source ${VIMRC_LOC}"
 if [ -f "$HOME/.zuser" ] ; then
     source $HOME/.zuser
 fi
-
-# Load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
-# zoxide install
-eval "$(zoxide init zsh --cmd cd)"
