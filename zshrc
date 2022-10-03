@@ -11,23 +11,15 @@ zinit light akash329d/zsh-alias-finder
 
 # Binaries
 
-zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zinit light sharkdp/bat
-
-zinit ice as"program" from"gh-r" \
-atclone"./zoxide init zsh > init.zsh" \
-atpull"%atclone" src"init.zsh" nocompile'!'
-zinit light ajeetdsouza/zoxide
-
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-zinit ice from"gh-r" as"program"
-zinit light extrawurst/gitui
+# Rust Annex 
+zinit light zdharma-continuum/zinit-annex-rust
 
-zinit ice from"gh-r" as"program" pick"bin/exa" \
-atclone"cp completions/exa.zsh _exa" atpull"%atclone"
-zinit light ogham/exa
+zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat)" \
+atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
+zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
@@ -35,8 +27,8 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='exa --icons -a' # List All
-alias dfu='zinit self-update; zinit update --parallel; source ~/.zshrc' # Dotfile Update
-alias dfr='zinit cclear; zinit delete --all --yes; source ~/.zshrc' # Dotfile Replace (Delete old plugins)
+alias dfu='zinit self-update; zinit update --parallel; exec zsh' # Dotfile Update
+alias dfr='zinit cclear; zinit delete --all --yes; exec zsh' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
 alias gui='gitui'
 
