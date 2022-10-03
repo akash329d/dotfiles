@@ -18,7 +18,7 @@ zinit light junegunn/fzf
 # XArgs and multiple atclones as temporary workaround until threading issues resolve with cargo-binstall
 zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(bat|exa|gitui|jless|zoxide)" \
 atclone'echo -n "bat,exa,gitui,jless,zoxide" >> toinstall.txt' \
-atclone'cat toinstall.txt | tr ',' '\0' | xargs -0 -L1 ./cbinstall --install-path ./bin --no-symlinks --no-confirm' \
+atclone'cat toinstall.txt | tr "," "\0" | xargs -0 -L1 ./cbinstall --install-path ./bin --no-symlinks --no-confirm' \
 atload'eval "$(./bin/zoxide init zsh --cmd cd)"'
 zinit light cargo-bins/cargo-binstall
 
