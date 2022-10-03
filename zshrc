@@ -30,8 +30,8 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='exa --icons -a' # List All
-alias dfu='zinit self-update; zinit update --parallel; exec zsh' # Dotfile Update
-alias dfr='zinit cclear; zinit delete --all --yes; exec zsh' # Dotfile Replace (Delete old plugins)
+alias dfu='zinit self-update; zinit update; exec zsh' # Dotfile Update
+alias dfr='zinit delete --all --yes; zinit cclear; exec zsh' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
 alias gui='gitui'
 
@@ -43,4 +43,3 @@ export VIMINIT="source ${VIMRC_LOC}"
 if [ -f "$HOME/.zuser" ] ; then
     source $HOME/.zuser
 fi
-
