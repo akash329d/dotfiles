@@ -26,7 +26,7 @@ zinit light junegunn/fzf
 # atclone'eval "$(./bin/zoxide init zsh --cmd cd)"' \ # Have to duplicate atload to work on initial clone.
 
 zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(bat|exa|gitui|jless|zoxide)" \
-atclone'.cbinstall --install-path ./bin --no-symlinks --no-confirm bat exa gitui jless zoxide' \
+atclone'./cbinstall --install-path ./bin --no-symlinks --no-confirm bat exa gitui jless zoxide' \
 atpull'%atclone' \
 atload'eval "$(./bin/zoxide init zsh --cmd cd)"'
 zinit light cargo-bins/cargo-binstall
