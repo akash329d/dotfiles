@@ -28,7 +28,7 @@ bindkey "\e[1;5D" backward-word
 # Alias
 alias la='exa --icons -a' # List All
 alias dfu='zinit self-update; zinit update --parallel; exec zsh' # Dotfile Update
-alias dfr='zinit cclear; zinit delete --all --yes; exec zsh' # Dotfile Replace (Delete old plugins)
+alias dfr='zinit delete --all --yes; zinit cclear; exec zsh' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
 alias gui='gitui'
 
@@ -41,3 +41,8 @@ if [ -f "$HOME/.zuser" ] ; then
     source $HOME/.zuser
 fi
 
+# Load completions
+autoload -Uz compinit
+compinit
+
+zinit cdreplay -q
