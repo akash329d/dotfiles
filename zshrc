@@ -22,8 +22,10 @@ zinit light junegunn/fzf
 # zinit light zdharma-continuum/null
 
 zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(bat|exa|gitui|jless|zoxide)" \
-atclone'tr -d "\n" <<< "bat,exa,gitui,jless,zoxide" | xargs -d ',' -L1 cbinstall --install-path ./bin --no-symlinks --no-confirm' \
-atpull"%atclone" atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
+atclone'echo -n "bat,exa,gitui,jless,zoxide" >> toinstall.txt' \
+atclone'cat toinstall.txt | xargs -d ',' -L1 cbinstall --install-path ./bin --no-symlinks --no-confirm' \
+atpull'%atclone' \
+atload'eval "$(./bin/zoxide init zsh --cmd cd)"'
 zinit light cargo-bins/cargo-binstall
 
 # Bind ctrl/arrow keys
