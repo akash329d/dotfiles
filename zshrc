@@ -15,11 +15,14 @@ zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
 # Rust Annex 
-zinit light zdharma-continuum/zinit-annex-rust
+# zinit light zdharma-continuum/zinit-annex-rust
 
-zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat)" \
-atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
-zinit light zdharma-continuum/null
+# zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat)" \
+# atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
+# zinit light zdharma-continuum/null
+
+zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cargo-binstall" pick"cargo-binstall/cargo-binstall"
+zinit light cargo-bins/cargo-binstall
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
