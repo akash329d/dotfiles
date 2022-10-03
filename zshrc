@@ -18,7 +18,7 @@ zinit light junegunn/fzf
 zinit light zdharma-continuum/zinit-annex-rust
 
 zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)" \
-atload"zoxide init zsh --cmd cd > init.zsh" src"init.zsh"
+atinit"zoxide init zsh --cmd cd > init.zsh" src"init.zsh"
 zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
