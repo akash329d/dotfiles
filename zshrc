@@ -17,7 +17,7 @@ zinit light junegunn/fzf
 # Rust Annex 
 zinit light zdharma-continuum/zinit-annex-rust
 
-zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)" \
+zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)"
 zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
