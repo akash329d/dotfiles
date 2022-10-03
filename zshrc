@@ -14,11 +14,12 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-
-# Use https://github.com/cargo-bins/cargo-binstall/ to install rust CLI tools
+# Use https://github.com/cargo-bins/cargo-binstall/ to install Rust CLI tools
+# XArgs and multiple atclones as temporary workaround until threading issues resolve with cargo-binstall
 zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(bat|exa|gitui|jless|zoxide)" \
-atclone'./cbinstall --install-path ./bin --no-symlinks --no-confirm exa bat gitui jless zoxide' \
-run-atpull atpull'%atclone' \
+atclone'echo -n "bat,exa,gitui,jless,zoxide" >> toinstall.txt' \
+atclone'cat toinstall.txt | xargs -d ',' -L1 ./cbinstall --install-path ./bin --no-symlinks --no-confirm' \
+atclone'eval "$(./bin/zoxide init zsh --cmd cd)"' \ # Have to duplicate atload to work on initial clone.
 atload'eval "$(./bin/zoxide init zsh --cmd cd)"'
 zinit light cargo-bins/cargo-binstall
 
