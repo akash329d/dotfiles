@@ -18,7 +18,7 @@ zinit light junegunn/fzf
 zinit light zdharma-continuum/zinit-annex-rust
 
 zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat)" \
-atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
+atload='eval "$(./bin/zoxide init zsh)"'
 zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
