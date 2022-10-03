@@ -21,7 +21,9 @@ zinit light junegunn/fzf
 # atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
 # zinit light zdharma-continuum/null
 
-zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"cargo-binstall/cbinstall"
+zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(exa|bat)" \
+atclone"cbinstall --install-path ./bin --no-symlinks --no-configm exa gitup zoxide bat" \
+atload='eval "$(./bin/zoxide init zsh --cmd cd)"'
 zinit light cargo-bins/cargo-binstall
 
 # Bind ctrl/arrow keys
