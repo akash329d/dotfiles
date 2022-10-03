@@ -17,8 +17,7 @@ zinit light junegunn/fzf
 # Rust Annex 
 zinit light zdharma-continuum/zinit-annex-rust
 
-zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat)" \
-atload='eval "$(./bin/zoxide init zsh)"'
+zinit ice rustup cargo'exa;gitui;zoxide;bat' as"command" pick"bin/(exa|gitui|bat|zoxide)" \
 zinit light zdharma-continuum/null
 
 # Bind ctrl/arrow keys
@@ -42,7 +41,8 @@ if [ -f "$HOME/.zuser" ] ; then
 fi
 
 # Load completions
-autoload -Uz compinit
-compinit
-
+autoload -Uz compinit && compinit
 zinit cdreplay -q
+
+# zoxide install
+eval "$(zoxide init zsh --cmd cd)"
