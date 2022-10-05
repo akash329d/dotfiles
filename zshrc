@@ -14,7 +14,7 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-if [ ! -f ~/.skip_rust_tools ]
+if [ ! -f ~/.build_rust_tools ]
 then
     # Use https://github.com/cargo-bins/cargo-binstall/ to install Rust CLI tools
     # XArgs and multiple atclones as temporary workaround until threading issues resolve with cargo-binstall
@@ -24,6 +24,13 @@ then
     atclone'./bin/zoxide init zsh --cmd cd > init.zsh' \
     atpull"%atclone" src"init.zsh" nocompile'!'
     zinit light cargo-bins/cargo-binstall
+else
+    # Use Rust Annex if CBInstall doesn't have binaries. 
+    zinit light zdharma-continuum/zinit-annex-rust
+
+    zinit ice rustup cargo'exa;gitui;zoxide;bat;jless' as"command" pick"bin/(exa|gitui|bat|zoxide|jless)" \
+    atinit"./bin/zoxide init zsh --cmd cd > init.zsh" src"init.zsh"
+    zinit light zdharma-continuum/null
 fi
 
 # Bind ctrl/arrow keys
