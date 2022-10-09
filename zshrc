@@ -23,7 +23,7 @@ then
     zinit ice as"program" from"gh-r" mv"cargo-binstall* -> cbinstall" pick"bin/(${RUST_TOOLS_TO_INSTALL//,/|})" \
     atclone"./cbinstall --install-path ./bin --no-symlinks --no-confirm ${RUST_TOOLS_TO_INSTALL//,/ }" \
     atclone'./bin/zoxide init zsh --cmd cd > init.zsh' \
-    atpull"%atclone" src"init.zsh" nocompile'!'
+    run-atpull atpull"%atclone" src"init.zsh" nocompile'!'
     zinit light cargo-bins/cargo-binstall
 else
     # Use Rust Annex if CBInstall doesn't have binaries. 
