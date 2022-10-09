@@ -14,7 +14,10 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide,helix" # Comma Delimited
+zinit ice from"gh-r" as"program" mv"helix* -> helix" pick"helix/hx"
+zinit light helix-editor/helix
+
+RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
 then
@@ -40,7 +43,7 @@ bindkey "\e[1;5D" backward-word
 
 # Alias
 alias la='exa --icons -a' # List All
-alias dfu='zinit self-update; zinit update; exec zsh' # Dotfile Update
+alias dfu='zinit self-update; zinit update --all; exec zsh' # Dotfile Update
 alias dfr='zinit delete --all --yes; zinit cclear; exec zsh' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
 alias gui='gitui'
@@ -48,6 +51,10 @@ alias gui='gitui'
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
 export VIMINIT="source ${VIMRC_LOC}"
+
+# helix config
+HELIC_CONF_LOC=${SCRIPT_DIR}/helix_config.toml
+alias hx="hx -c ${HELIC_CONF_LOC}"
 
 # zuser
 if [ -f "$HOME/.zuser" ] ; then
