@@ -14,7 +14,7 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide" # Comma Delimited
+RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide,helix" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
 then
