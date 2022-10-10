@@ -17,7 +17,7 @@ zinit light junegunn/fzf
 zinit ice from"gh-r" as"program" mv"helix* -> helix" pick"helix/hx"
 zinit light helix-editor/helix
 
-RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide,difftastic" # Comma Delimited
+RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
 then
