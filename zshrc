@@ -14,9 +14,6 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-zinit ice from"gh-r" as"program" mv"helix* -> helix" pick"helix/hx"
-zinit light helix-editor/helix
-
 RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
@@ -51,10 +48,6 @@ alias gui='gitui'
 # vimrc
 VIMRC_LOC=${SCRIPT_DIR}/vimrc
 export VIMINIT="source ${VIMRC_LOC}"
-
-# helix config
-HELIC_CONF_LOC=${SCRIPT_DIR}/helix_config.toml
-alias hx="hx -c ${HELIC_CONF_LOC}"
 
 # zuser
 if [ -f "$HOME/.zuser" ] ; then
