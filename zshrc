@@ -14,7 +14,7 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide" # Comma Delimited
+RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide,atuin" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
 then
@@ -33,6 +33,9 @@ else
     atinit"./bin/zoxide init zsh --cmd cd > init.zsh" src"init.zsh"
     zinit light zdharma-continuum/null
 fi
+
+# Load atuin after installation
+zinit load atuinsh/atuin
 
 # Bind ctrl/arrow keys
 bindkey "\e[1;5C" forward-word
