@@ -14,7 +14,7 @@ zinit light akash329d/zsh-alias-finder
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-RUST_TOOLS_TO_INSTALL="bat,exa,gitui,jless,zoxide,atuin" # Comma Delimited
+RUST_TOOLS_TO_INSTALL="bat,eza,gitui,jless,zoxide,atuin" # Comma Delimited
 
 if [ ! -f ~/.build_rust_tools ]
 then
@@ -42,7 +42,7 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 
 # Alias
-alias la='exa --icons -a' # List All
+alias la='eza --icons -a' # List All
 alias dfu='zinit self-update; zinit update --all; exec zsh' # Dotfile Update
 alias dfr='zinit delete --all --yes; zinit cclear; exec zsh' # Dotfile Replace (Delete old plugins)
 alias cat='bat'
