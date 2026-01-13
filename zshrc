@@ -5,6 +5,11 @@ DOTFILES_DIR="${0:A:h}"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
 
+# Start atuin daemon in background zellij session if not running
+if command -v zellij &>/dev/null && ! zellij list-sessions 2>/dev/null | grep -q "atuin-daemon"; then
+  zellij -s atuin-daemon -b -- atuin daemon
+fi
+
 # Key bindings
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word

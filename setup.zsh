@@ -18,7 +18,7 @@ fi
 
 # Install Sheldon and CLI tools
 echo "Installing tools via Homebrew..."
-brew install sheldon fzf bat eza gitui jless zoxide atuin ripgrep
+brew install sheldon fzf bat eza gitui jless zoxide atuin ripgrep zellij
 
 # Create Sheldon config that pulls dotfiles remotely
 mkdir -p ~/.config/sheldon
