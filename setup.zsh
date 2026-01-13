@@ -20,6 +20,9 @@ fi
 echo "Installing tools via Homebrew..."
 brew install sheldon fzf bat eza gitui jless zoxide atuin ripgrep zellij
 
+# Disable brew's atuin service - we manage daemon via zellij in zshrc
+brew services stop atuin 2>/dev/null || true
+
 # Create Sheldon config that pulls dotfiles remotely
 mkdir -p ~/.config/sheldon
 cat > ~/.config/sheldon/plugins.toml <<'EOM'
