@@ -51,9 +51,13 @@ EOM
 # Lock/install plugins
 sheldon lock
 
-# Add to .zshrc if not present
-if ! grep -q "SECTION FOR DOTFILES" ~/.zshrc 2>/dev/null; then
-  cat >> ~/.zshrc <<'EOM'
+# Remove old dotfiles section if present, then add fresh
+if [[ -f ~/.zshrc ]]; then
+  sed -i.bak '/^###### SECTION FOR DOTFILES ######$/,/^###### DOTFILES END ######$/d' ~/.zshrc
+  rm -f ~/.zshrc.bak
+fi
+
+cat >> ~/.zshrc <<'EOM'
 
 ###### SECTION FOR DOTFILES ######
 
@@ -76,7 +80,4 @@ eval "$(sheldon source)"
 
 ###### DOTFILES END ######
 EOM
-  echo "Dotfiles installed! Restart zsh to see changes."
-else
-  echo "Dotfiles already configured."
-fi
+echo "Dotfiles installed! Restart zsh to see changes."
