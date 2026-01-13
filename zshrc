@@ -6,7 +6,7 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
 
 # Start atuin daemon in background zellij session if not running
-if ! pgrep -qf "atuin daemon"; then
+if ! pgrep -f "atuin daemon" >/dev/null 2>&1; then
   zellij attach -c -b atuin-daemon &>/dev/null && \
   zellij -s atuin-daemon run --direction down -- atuin daemon &>/dev/null && \
   zellij -s atuin-daemon action focus-previous-pane &>/dev/null && \
