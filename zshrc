@@ -6,8 +6,8 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
 
 # Start atuin daemon in background zellij session if not running
-if command -v zellij &>/dev/null && ! zellij list-sessions 2>/dev/null | grep -q "atuin-daemon"; then
-  zellij attach -c -b atuin-daemon &>/dev/null && zellij -s atuin-daemon run --in-place -- atuin daemon &>/dev/null
+if ! pgrep -qf "atuin daemon"; then
+  zellij attach -c -b atuin-daemon &>/dev/null && zellij -s atuin-daemon run --direction down -- atuin daemon &>/dev/null
 fi
 
 # Key bindings
