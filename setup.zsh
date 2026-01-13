@@ -16,9 +16,9 @@ if ! command -v brew &>/dev/null; then
   fi
 fi
 
-# Install Sheldon and CLI tools
+# Install tools via Brewfile
 echo "Installing tools via Homebrew..."
-brew install sheldon fzf bat eza gitui jless zoxide atuin ripgrep zellij
+curl -fsSL https://raw.githubusercontent.com/akash329d/dotfiles/main/Brewfile | brew bundle install --file=-
 
 # Disable brew's atuin service - we manage daemon via zellij in zshrc
 brew services stop atuin 2>/dev/null || true

@@ -18,7 +18,7 @@ bindkey "\e[1;5D" backward-word
 alias la='eza --icons -a'
 alias cat='bat'
 alias gui='gitui'
-alias dfu='sheldon lock --update && exec zsh'
+alias dfu='brew bundle install --file="${DOTFILES_DIR}/Brewfile" && brew services stop atuin 2>/dev/null; sheldon lock --update && exec zsh'
 
 # Vim config
 export VIMINIT="source ${DOTFILES_DIR}/vimrc"
