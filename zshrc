@@ -8,6 +8,7 @@ eval "$(atuin init zsh)"
 # Start atuin daemon in background zellij session if not running
 if ! pgrep -f "atuin daemon" >/dev/null 2>&1; then
   zellij kill-session atuin-daemon &>/dev/null
+  zellij delete-session atuin-daemon --force &>/dev/null
   zellij -l "${DOTFILES_DIR}/zellij/atuin-daemon.kdl" attach -cbf atuin-daemon &>/dev/null
 fi
 
