@@ -7,8 +7,7 @@ eval "$(atuin init zsh)"
 
 # Start atuin daemon in background zellij session if not running
 if ! pgrep -f "atuin daemon" >/dev/null 2>&1; then
-  zellij attach -c -b atuin-daemon &>/dev/null && \
-  zellij -s atuin-daemon run --in-place -- atuin daemon &>/dev/null
+  zellij -l "${DOTFILES_DIR}/zellij/atuin-daemon.kdl" attach -c -b atuin-daemon &>/dev/null
 fi
 
 # Key bindings
