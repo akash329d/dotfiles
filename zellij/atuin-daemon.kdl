@@ -4,5 +4,6 @@ layout {
     }
     pane command="atuin" {
         args "daemon"
+        start_suspended false
     }
 }
