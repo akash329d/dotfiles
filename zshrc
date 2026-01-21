@@ -2,6 +2,7 @@
 DOTFILES_DIR="${0:A:h}"
 
 # Tool init
+export _ZO_DOCTOR=0
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
 
